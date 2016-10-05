@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     resources :topics, only: [:new, :create]
     resources :feedbacks, only: [:new, :create, :index]
   end
-  resources :pairing, except: :show
+  resources :pairings, except: :show
 end
