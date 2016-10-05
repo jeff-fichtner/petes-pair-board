@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   end
   resources :pairings, except: :show
 
+  post '/sessions/new' => 'sessions#new'
+
   root "users#new"
 end
