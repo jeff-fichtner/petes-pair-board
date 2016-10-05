@@ -28,6 +28,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user.destroy
+    redirect_to 'users#new'
   end
 
   private
