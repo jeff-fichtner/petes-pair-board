@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     resources :feedbacks, only: [:new, :create, :index]
   end
   resources :pairings, except: :show
+  post '/sessions/new' => 'sessions#new'
   root "users#new"
 end
