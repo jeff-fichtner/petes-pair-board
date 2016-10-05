@@ -1,3 +1,5 @@
+<!-- form to create a new pairing - for mentors only -->
+
 <ul>
   <li><%= pairing.mentor.name %></li>
   <li> MENTOR AVG. RATING </li>
@@ -5,5 +7,7 @@
   <li><%= pairing.start_time %></li>
   <li><%= pairing.mentor.email %></li>  <!-- link to email -->
 
-  <%= link_to 'Join this mentor', edit_pairing_path(pairing) %>
+  <% if !mentor %>
+    <%= link_to 'Join this mentor', edit_pairing_path(pairing) %>
+  <% end %>
 </ul>

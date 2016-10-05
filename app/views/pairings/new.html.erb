@@ -1,8 +1,11 @@
-<%= form_for @pairing do |f| %>
+<!-- new pairing form - only for mentors -->
 
-  <%= f.label :start_time, 'Start time (DD/MM/YYYY HH/MM/SS): ' %>
-  <%= f.text_field :start_time %><br>
+<% if mentor %>
 
-  <%= f.submit %>
+  <%= form_for @pairing do |f| %>
+    <%= f.label :start_time, 'Start time (DD/MM/YYYY HH/MM/SS): ' %>
+    <%= f.text_field :start_time %><br>
+    <%= f.submit %>
+  <% end %>
 
 <% end %>
