@@ -1,24 +1,24 @@
 phases = [1, 2, 3]
 
-User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
-User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password_digest: 'password', phase: phases.sample)
+User.create!(group: 'student', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
 50.times {Pairing.create!(start_time: Faker::Time.between(DateTime.now - 1, DateTime.now), mentor_id: rand(1..5), student_id: rand(6..10))}
 
