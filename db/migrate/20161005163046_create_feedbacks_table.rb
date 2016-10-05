@@ -1,6 +1,6 @@
 class CreateFeedbacksTable < ActiveRecord::Migration
   def change
-    create_table :feedbacks_tables do |t|
+    create_table :feedbacks do |t|
       t.integer :feedbackable_id
       t.string :feedbackable_type
       t.integer :rating

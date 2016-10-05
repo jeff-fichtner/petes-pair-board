@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20161005163124) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "feedbacks_tables", force: :cascade do |t|
+  create_table "feedbacks", force: :cascade do |t|
     t.integer "feedbackable_id"
     t.string  "feedbackable_type"
     t.integer "rating"
@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 20161005163124) do
     t.integer "pairing_id"
   end
 
-  create_table "pairings_tables", force: :cascade do |t|
+  create_table "pairings", force: :cascade do |t|
     t.datetime "start_time"
     t.integer  "mentor_id"
     t.integer  "student_id"
     t.string   "topics"
   end
 
-  create_table "users_tables", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string  "type"
     t.string  "name"
     t.string  "email"
