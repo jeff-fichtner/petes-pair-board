@@ -1,0 +1,38 @@
+<h2>Register:</h2>
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %>
+      <%= f.text_field :name %><br>
+
+    <%= f.label :email %>
+      <%= f.email_field :email %><br>
+
+    <%= f.label :password %>
+      <%= f.password_field :password %><br>
+
+    <%= radio_button_tag(:phase, 1) %>
+      <%= label_tag(:phase, "Phase 1") %><br>
+    <%= radio_button_tag(:phase, 2) %>
+      <%= label_tag(:phase, "Phase 2") %><br>
+    <%= radio_button_tag(:phase, 3) %>
+      <%= label_tag(:phase, "Phase 3") %><br>
+
+    <%= radio_button_tag(:group, "mentor") %>
+      <%= label_tag(:group, "Mentor") %><br>
+    <%= radio_button_tag(:group, "student") %>
+      <%= label_tag(:group, "Student") %><br>
+
+    <%= f.submit "Create" %>
+
+<% end %>
+
+<h2>Login:</h2>
+<%= form_for @user, url: sessions_new_path do |f| %>
+
+  <%= f.label :email %>
+    <%= f.email_field :email %><br>
+  <%= f.label :password %>
+    <%= f.password_field :password %><br>
+
+  <%= f.submit "Login" %>
+<% end %>
