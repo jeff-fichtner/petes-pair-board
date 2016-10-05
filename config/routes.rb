@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post '/sessions/new' => 'sessions#new'
 
   root "users#new"
+
 end
