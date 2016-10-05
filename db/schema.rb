@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20161005194305) do
     t.datetime "start_time"
     t.integer  "mentor_id"
     t.integer  "student_id"
-    t.string   "topics"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -41,7 +40,7 @@ ActiveRecord::Schema.define(version: 20161005194305) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "type"
+    t.string  "group"
     t.string  "name"
     t.string  "email"
     t.string  "password_digest"
