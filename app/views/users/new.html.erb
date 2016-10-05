@@ -10,24 +10,24 @@
     <%= f.label :password %>
       <%= f.password_field :password %><br>
 
-    <%= radio_button_tag(:phase, 1) %>
-      <%= label_tag(:phase, "Phase 1") %><br>
-    <%= radio_button_tag(:phase, 2) %>
-      <%= label_tag(:phase, "Phase 2") %><br>
-    <%= radio_button_tag(:phase, 3) %>
-      <%= label_tag(:phase, "Phase 3") %><br>
+    <%= f.radio_button(:phase, "1") %>
+      <%= f.label(:phase, "Phase 1") %><br>
+    <%= f.radio_button(:phase, "2") %>
+      <%= f.label(:phase, "Phase 2") %><br>
+    <%= f.radio_button(:phase, "3") %>
+      <%= f.label(:phase, "Phase 3") %><br>
 
-    <%= radio_button_tag(:group, "mentor") %>
-      <%= label_tag(:group, "Mentor") %><br>
-    <%= radio_button_tag(:group, "student") %>
-      <%= label_tag(:group, "Student") %><br>
+    <%= f.radio_button(:group, "mentor") %>
+      <%= f.label(:group, "Mentor") %><br>
+    <%= f.radio_button(:group, "student") %>
+      <%= f.label(:group, "Student") %><br>
 
-    <%= f.submit "Create" %>
+    <%= f.submit "Create", name: nil %>
 
 <% end %>
 
 <h2>Login:</h2>
-<%= form_for @user, url: sessions_new_path do |f| %>
+<%= form_for @user, url: sessions_path do |f| %>
 
   <%= f.label :email %>
     <%= f.email_field :email %><br>
