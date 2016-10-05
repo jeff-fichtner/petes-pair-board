@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :feedbacks, only: [:new, :create, :index]
   end
   resources :pairings, except: :show
+  root "users#new"
 end
