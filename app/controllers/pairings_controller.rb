@@ -9,9 +9,7 @@ class PairingsController < ApplicationController
   end
 
   def create
-    @pairing = Pairing.new(pairing_params.merge(mentor_id: 2))
-    p "*********************************"
-    p @pairing
+    @pairing = Pairing.new(pairing_params.merge(mentor_id: ))
     if @pairing.save
       redirect_to pairings_path
     else
