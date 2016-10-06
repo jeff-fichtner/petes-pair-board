@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, except: [:new, :create]
   def show
+    redirect_to pairings_path
   end
 
   def student
