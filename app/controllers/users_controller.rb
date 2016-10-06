@@ -3,6 +3,16 @@ class UsersController < ApplicationController
   def show
   end
 
+  def student
+    @upcoming_student_pairings = Pairing.upcoming_student_pairings(current_user)
+    @previous_student_pairings = Pairing.previous_student_pairings(current_user)
+  end
+
+  def mentor
+    @upcoming_mentor_pairings = Pairing.upcoming_mentor_pairings(current_user)
+    @previous_mentor_pairings = Pairing.previous_mentor_pairings(current_user)
+  end
+
   def new
     @user = User.new
   end
