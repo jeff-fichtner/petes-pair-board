@@ -16,7 +16,7 @@
 ul.navbar {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     overflow: hidden;
     background-color: #333;
 }
@@ -35,4 +35,10 @@ ul.navbar {
 
 .navbar li a:hover {
     background-color: #111;
+}
+
+.list {
+    padding: 10px;
+    margin-left: 50px;
+    width: 80%
 }
