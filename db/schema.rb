@@ -11,40 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005194305) do
+ActiveRecord::Schema.define(version: 20161006161719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "feedbacks", force: :cascade do |t|
-    t.integer "feedbackable_id"
-    t.string  "feedbackable_type"
-    t.integer "rating"
-    t.text    "comment"
-    t.integer "pairing_id"
+    t.integer  "rating"
+    t.text     "comment"
+    t.integer  "pairing_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pairings", force: :cascade do |t|
     t.datetime "start_time"
     t.integer  "mentor_id"
     t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "topics", force: :cascade do |t|
-    t.string "name"
+    t.string   "topic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "topics_users", force: :cascade do |t|
-    t.integer "mentor_id"
-    t.integer "topic_id"
+    t.integer  "mentor_id"
+    t.integer  "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "group"
-    t.string  "name"
-    t.string  "email"
-    t.string  "password_digest"
-    t.integer "phase"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.integer  "phase"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "users_roles", force: :cascade do |t|
+    t.integer  "role_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

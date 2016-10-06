@@ -40,6 +40,6 @@ class UsersController < ApplicationController
     @user = current_user
   end
   def user_params
-    params.require(:user).permit(:group, :name, :email, :password, :phase)
+    params.require(:user).permit(:name, :email, :password, :phase)
   end
 end
