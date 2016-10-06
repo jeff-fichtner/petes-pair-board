@@ -1,33 +1,16 @@
 phases = [1, 2, 3]
 
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
+10.times {User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)}
 
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
+# 50.times {Pairing.create!(start_time: Faker::Time.between(DateTime.now - 1, DateTime.now), mentor_id: rand(1..10), student_id: rand(1..10))}
 
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
-
-50.times {Pairing.create!(start_time: Faker::Time.between(DateTime.now - 1, DateTime.now), mentor_id: rand(1..10), student_id: rand(1..10))}
-
+Pairing.create!(start_time: Faker::Time.between(DateTime.now - 1, DateTime.now), mentor_id: 5, student_id: 9)
 Feedback.create!(rating: rand(1..5), comment: 'comment', pairing_id: 1, user_id: 5)
-
 Feedback.create!(rating: rand(1..5), comment: 'comment', pairing_id: 1, user_id: 9)
 
-Feedback.create!(rating: rand(1..5), comment: 'comment', pairing_id: 16, user_id: 2)
 
+Pairing.create!(start_time: Faker::Time.between(DateTime.now - 1, DateTime.now), mentor_id: 2, student_id: 10)
+Feedback.create!(rating: rand(1..5), comment: 'comment', pairing_id: 16, user_id: 2)
 Feedback.create!(rating: rand(1..5), comment: 'comment', pairing_id: 16, user_id: 10)
 
 Role.create!(role: "Student")
