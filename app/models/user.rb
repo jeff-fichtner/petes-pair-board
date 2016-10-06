@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   has_secure_password
+
+  def average(ratings)
+    ratings.inject{ |sum, rating| sum + rating }.to_f / ratings.size
+  end
 end

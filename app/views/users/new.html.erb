@@ -10,17 +10,17 @@
     <%= f.label :password %>
       <%= f.password_field :password %><br>
 
-    <%= f.radio_button(:phase, "1") %>
-      <%= f.label(:phase, "Phase 1") %><br>
-    <%= f.radio_button(:phase, "2") %>
-      <%= f.label(:phase, "Phase 2") %><br>
-    <%= f.radio_button(:phase, "3") %>
-      <%= f.label(:phase, "Phase 3") %><br>
+      <%= f.label(:phase, "Phase 1") %>
+    <%= f.radio_button(:phase, "1") %><br>
+      <%= f.label(:phase, "Phase 2") %>
+    <%= f.radio_button(:phase, "2") %><br>
+      <%= f.label(:phase, "Phase 3") %>
+    <%= f.radio_button(:phase, "3") %><br>
 
-    <%= f.radio_button(:group, "mentor") %>
-      <%= f.label(:group, "Mentor") %><br>
-    <%= f.radio_button(:group, "student") %>
-      <%= f.label(:group, "Student") %><br>
+      <%= f.label(:group, "Mentor") %>
+    <%= f.radio_button(:group, "mentor") %><br>
+      <%= f.label(:group, "Student") %>
+    <%= f.radio_button(:group, "student") %><br>
 
     <%= f.submit "Create", name: nil %>
 
