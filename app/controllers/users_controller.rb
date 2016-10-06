@@ -37,7 +37,11 @@ class UsersController < ApplicationController
 
   private
   def set_user
-    @user = current_user
+    if current_user
+      @user ||= current_user
+    else
+      redirect_to new_user_path
+    end
   end
   def user_params
     params.require(:user).permit(:name, :email, :password, :phase)
