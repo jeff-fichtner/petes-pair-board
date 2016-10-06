@@ -34,11 +34,19 @@ ul.navbar {
 }
 
 .navbar li a:hover {
-    background-color: #111;
+    background-color: #2BBBAD;
 }
 
 .list {
     padding: 10px;
     margin-left: 50px;
     width: 80%
+}
+
+.join {
+    color: #2BBBAD;
+}
+
+li {
+    font-weight: bold;
 }

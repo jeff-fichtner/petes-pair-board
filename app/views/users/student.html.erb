@@ -1,5 +1,7 @@
-<h1><%= current_user.name %>'s Upcoming Student Pairings</h1>
-  <%= render @upcoming_student_pairings %>
+<div class='list'>
+  <h1><%= current_user.name %>'s Upcoming Student Pairings</h1>
+    <%= render @upcoming_student_pairings %>
 
-<h1><%= current_user.name %>'s Previous Student Pairings</h1>
-  <%= render @previous_student_pairings %>
+  <h1><%= current_user.name %>'s Previous Student Pairings</h1>
+    <%= render @previous_student_pairings %>
+</div>
