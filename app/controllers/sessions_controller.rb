@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :set_user
+
   def new
     @user = User.find_by(email: login_params[0]).try(:authenticate, login_params[1])
     if @user
