@@ -1,7 +1,8 @@
 class PairingsController < ApplicationController
 
   def index
-    @pairings = Pairing.order(start_time: :desc).limit(10)
+    @upcoming_pairings = Pairing.order(start_time: :desc).limit(10)
+    @previous_pairings = Pairing.where({mentor_id: current_user.id}).order(:start_time).limit(10)
   end
 
   def new
