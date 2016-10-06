@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  skip_before_filter :set_user
-
   def new
     @user = User.find_by(email: login_params[0]).try(:authenticate, login_params[1])
     if @user
@@ -12,6 +10,7 @@ class SessionsController < ApplicationController
       render new_user_path
     end
   end
+
   def destroy
     session[:user_id] = nil
     redirect_to new_user_path

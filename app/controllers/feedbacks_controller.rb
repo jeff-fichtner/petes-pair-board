@@ -1,4 +1,5 @@
 class FeedbacksController < ApplicationController
+  before_action :set_user
   def index
     # sorting feedback
   end
