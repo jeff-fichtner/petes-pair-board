@@ -5,9 +5,10 @@ Rails.application.routes.draw do
     resources :topics, only: [:new, :create]
     resources :feedbacks, only: [:index]
   end
-    resources :pairings, except: :show do
-      resources :feedbacks, only: [:new, :create]
-    end
+
+  resources :pairings, except: :show do
+    resources :feedbacks, only: [:new, :create]
+  end
 
   post '/sessions' => 'sessions#new'
   delete '/sessions' => 'sessions#destroy', as: 'logout'
