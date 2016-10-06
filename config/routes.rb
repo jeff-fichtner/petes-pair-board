@@ -3,11 +3,11 @@ Rails.application.routes.draw do
     get 'student'
     get 'mentor'
     resources :topics, only: [:new, :create]
+    resources :feedbacks, only: [:index]
+  end
     resources :pairings, except: :show do
       resources :feedbacks, only: [:new, :create]
     end
-    resources :feedbacks, only: [:index]
-  end
 
   post '/sessions' => 'sessions#new'
   delete '/sessions' => 'sessions#destroy', as: 'logout'
