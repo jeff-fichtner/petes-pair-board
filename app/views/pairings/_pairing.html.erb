@@ -1,13 +1,18 @@
 <!-- form to create a new pairing - for mentors only -->
 
 <ul>
-  <li><%= pairing.mentor.name %></li>
-  <li> <%#= pairing.mentor.average(pairing.mentor.feedbacks) %> </li>
+  <li>Mentor: <%= pairing.mentor.name %></li>
+
+  <li>Student: <% if pairing.student != nil %>
+                <%= pairing.student.name %></li>
+               <% end %>
+
+  <li> <%= pairing.mentor.average %> </li>
   <li>Phase: <%= pairing.mentor.phase %></li>
   <li><%= pairing.start_time %></li>
   <li><%= pairing.mentor.email %></li>  <!-- link to email -->
 
-  <% if !mentor %>
+  <% if pairing.mentor_id != current_user.id %>
     <%= link_to 'Join this mentor', edit_pairing_path(pairing) %>
   <% end %>
 </ul>
