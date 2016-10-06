@@ -13,7 +13,13 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  def average(ratings)
-    ratings.inject{ |sum, rating| sum + rating }.to_f / ratings.size
+  def average
+    mentor_ratings.inject{ |sum, rating| sum + rating }.to_f / mentor_ratings.size
   end
+
+  def mentor_ratings
+    feedback_arr =self.mentor_feedbacks.where("user_id != #{self.id}")
+    return feedback_arr.map { |feedback| feedback.rating }
+  end
+
 end
