@@ -1,5 +1,5 @@
 phases = [1, 2, 3]
-
+types = ['Mentor', '']
 User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
 
 User.create!(group: 'mentor', name: Faker::Name.name, email: Faker::Internet.email, password: 'password', phase: phases.sample)
@@ -33,4 +33,5 @@ Topic.create!(name: 'MVC')
 Topic.create!(name: 'associations')
 Topic.create!(name: 'schemas')
 
+50.times {Feedback.create!(feedbackable_id: rand(1..10), )}
 
