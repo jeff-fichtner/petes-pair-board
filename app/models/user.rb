@@ -18,34 +18,6 @@ class User < ActiveRecord::Base
     ratings.inject{ |sum, rating| sum + rating }.to_f / ratings.size
   end
 
-  def mentor_feedback
-    self.mentor_pairings.map do |pairing|
-      yield(pairing)
-    end
-  end
-
-  def received_mentor_feedbacks
-    pairing.feedbacks.select { |feedback| feedback.user_id == pairing.student_id }
-  end
-
-  def given_mentor_feedbacks
-    self.mentor_pairings.each do |pairing|
-      feedback += pairing.feedbacks.select { |feedback| feedback.user_id == pairing.mentor_id }
-    end
-  end
-
-  def received_student_feedbacks
-    self.student_pairings.each do |pairing|
-      feedback += pairing.feedbacks.select { |feedback| feedback.user_id == pairing.mentor_id }
-    end
-  end
-
-  def given_student_feedbacks
-    self.student_pairings.each do |pairing|
-      feedback += pairing.feedbacks.select { |feedback| feedback.user_id == pairing.student_id }
-    end
-  end
-
   def sort
     self.sort { |a,b| a.pairing.start_at <=> b.pairing.start_at }
   end
