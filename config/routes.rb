@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: :index do
+    get 'student'
+    get 'mentor'
     resources :topics, only: [:new, :create]
     resources :pairings, except: :show do
       resources :feedbacks, only: [:new, :create]
@@ -10,7 +12,4 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#new'
   delete '/sessions' => 'sessions#destroy', as: 'logout'
   root 'users#show'
-
-
-
 end
