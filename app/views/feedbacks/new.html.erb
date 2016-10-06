@@ -1,16 +1,18 @@
-<%= form_for :feedback, url: pairing_feedbacks_path do |f| %>
-    <%= f.label :comment, 'Leave ASK Feedback' %>
-    <%= f.text_field :comment %><br>
+<div class='list'>
+    <%= form_for :feedback, url: pairing_feedbacks_path do |f| %>
+        <%= f.label :comment, 'Leave ASK Feedback' %>
+        <%= f.text_field :comment %><br>
 
-    <%= f.label(:rating, "1") %>
-    <%= f.radio_button(:rating, "1") %><br>
-    <%= f.label(:rating, "2") %>
-    <%= f.radio_button(:rating, "2") %><br>
-    <%= f.label(:rating, "3") %>
-    <%= f.radio_button(:rating, "3") %><br>
-    <%= f.label(:rating, "4") %>
-    <%= f.radio_button(:rating, "4") %><br>
-    <%= f.label(:rating, "5") %>
-    <%= f.radio_button(:rating, "5") %><br>
-    <%= f.submit %>
-<% end %>
+        <%= f.label(:rating, "1") %>
+        <%= f.radio_button(:rating, "1") %><br>
+        <%= f.label(:rating, "2") %>
+        <%= f.radio_button(:rating, "2") %><br>
+        <%= f.label(:rating, "3") %>
+        <%= f.radio_button(:rating, "3") %><br>
+        <%= f.label(:rating, "4") %>
+        <%= f.radio_button(:rating, "4") %><br>
+        <%= f.label(:rating, "5") %>
+        <%= f.radio_button(:rating, "5") %><br>
+        <%= f.submit %>
+    <% end %>
+</div>
