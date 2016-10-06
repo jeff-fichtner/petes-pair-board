@@ -1,7 +1,7 @@
 class PairingsController < ApplicationController
 
   def index
-    @pairings = Pairing.all
+    @pairings = Pairing.order(start_time: :desc).limit(10)
   end
 
   def new
