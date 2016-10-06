@@ -3,8 +3,8 @@
 <% if mentor %>
 
   <%= form_for @pairing do |f| %>
-    <%= f.label :start_time, 'Start time (DD/MM/YYYY HH/MM/SS): ' %>
-    <%= f.text_field :start_time %><br>
+    <%= f.label :start_time_text, 'Start time: ' %>
+    <%= f.text_field :start_time_text %><br>
     <%= f.submit %>
   <% end %>
 

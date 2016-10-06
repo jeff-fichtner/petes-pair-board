@@ -27,8 +27,9 @@ class PairingsController < ApplicationController
   end
 
   private
+
   def pairing_params
-    params.require(:pairing).permit(:start_time, :mentor_id, :student_id)
+    params.require(:pairing).permit(:mentor_id, :student_id, :start_time_text)
   end
 
 end
