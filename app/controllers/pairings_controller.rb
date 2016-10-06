@@ -2,10 +2,6 @@ class PairingsController < ApplicationController
   before_action :set_user
   def index
     @available_pairings =  Pairing.available_pairings(current_user)
-    @upcoming_mentor_pairings = Pairing.upcoming_mentor_pairings(current_user)
-    @previous_mentor_pairings = Pairing.previous_mentor_pairings(current_user)
-    @upcoming_student_pairings = Pairing.upcoming_student_pairings(current_user)
-    @previous_student_pairings = Pairing.previous_student_pairings(current_user)
   end
 
   def new
