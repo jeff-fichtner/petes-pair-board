@@ -1,8 +1,11 @@
 class PairingsController < ApplicationController
 
   def index
-    @upcoming_pairings =  Pairing.upcoming_pairings
-    @previous_pairings = Pairing.previous_pairings(current_user)
+    @available_pairings =  Pairing.available_pairings
+    @upcoming_mentor_pairings = Pairing.upcoming_mentor_pairings(current_user)
+    @previous_mentor_pairings = Pairing.previous_mentor_pairings(current_user)
+    @upcoming_student_pairings = Pairing.upcoming_student_pairings(current_user)
+    @previous_student_pairings = Pairing.previous_student_pairings(current_user)
   end
 
   def new
