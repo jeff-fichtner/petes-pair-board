@@ -26,4 +26,13 @@ class Pairing < ActiveRecord::Base
       errors.add :start_time_text, "is out of range"
   end
 
+  def self.upcoming_pairings
+    self.order(start_time: :desc).limit(10)
+  end
+
+  def self.previous_pairings(user)
+    self.where("start_time <= '#{(Time.now).utc.iso8601}'").where(mentor_id: user.id)
+  end
+
+
 end

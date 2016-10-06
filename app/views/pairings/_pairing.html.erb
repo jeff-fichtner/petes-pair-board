@@ -12,5 +12,7 @@
   <li><%= pairing.start_time %></li>
   <li><%= pairing.mentor.email %></li>  <!-- link to email -->
 
+  <% if pairing.mentor_id != current_user.id %>
     <%= link_to 'Join this mentor', edit_pairing_path(pairing) %>
+  <% end %>
 </ul>
