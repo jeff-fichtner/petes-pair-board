@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :pairings, except: :show
 
   post '/sessions' => 'sessions#new'
-
-  root "users#new"
+  delete '/sessions' => 'sessions#destroy', as: 'logout'
+  root 'users#show'
 
 end
