@@ -19,9 +19,17 @@ class PairingsController < ApplicationController
   end
 
   def edit
+    @pairing = Pairing.find(params[:id])
   end
 
   def update
+    @pairing = Pairing.find(params[:id])
+    @pairing.update_attributes(student_id: current_user.id)
+    if @pairing.save
+      redirect_to pairings_path
+    else
+      render 'edit'
+    end
   end
 
   def delete
