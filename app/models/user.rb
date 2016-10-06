@@ -14,6 +14,22 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  def given_mentor_feedbacks
+    self.mentor_feedbacks.where(user_id: self.id)
+  end
+
+  def received_mentor_feedbacks
+    self.mentor_feedbacks.where("user_id != #{self.id}")
+  end
+
+  def given_student_feedbacks
+    self.student_feedbacks.where(user_id: self.id)
+  end
+
+  def received_student_feedbacks
+    self.student_feedbacks.where("user_id != #{self.id}")
+  end
+
   def average
     mentor_ratings.inject{ |sum, rating| sum + rating }.to_f / mentor_ratings.size
   end
