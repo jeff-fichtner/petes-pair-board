@@ -18,18 +18,8 @@
         <input name='rating' value='5' id='radio5' type='radio'>
         <label for='radio5'>5</label>
 
-        <input type='hidden' name='pairing_id' value="#{params[:id]">
+        <input type='hidden' name='pairing_id' value="#{params[:id]}">
 
-        <%#= f.radio_button(:rating, "1", class: 'with-gap') %>
-        <%#= f.label(:rating, "1", class: 'with-gap') %>
-        <%#= f.radio_button(:rating, "2") %>
-        <%#= f.label(:rating, "2") %>
-        <%#= f.radio_button(:rating, "3") %>
-        <%#= f.label(:rating, "3") %>
-        <%#= f.radio_button(:rating, "4") %>
-        <%#= f.label(:rating, "4") %>
-        <%#= f.radio_button(:rating, "5") %>
-        <%#= f.label(:rating, "5") %>
         <%= f.submit %>
     <% end %>
 </div>
