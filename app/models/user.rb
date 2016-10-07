@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   has_many :mentor_feedbacks, through: :mentor_pairings, source: :feedbacks
   has_many :student_feedbacks, through: :student_pairings, source: :feedbacks
 
-  has_and_belongs_to_many :topics
+  has_many :topics_users, foreign_key: :mentor_id
+  has_many :topics, through: :topics_users
 
   validates :name, :email, :phase, presence: true
   validates :email, uniqueness: true

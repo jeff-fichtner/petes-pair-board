@@ -1,5 +1,6 @@
 class Topic < ActiveRecord::Base
-  has_and_belongs_to_many :mentors, class_name: "User"
+  has_many :topics_users
+  has_many :mentors, through: :topics_users
 
   validates :topic, presence: true
 end
