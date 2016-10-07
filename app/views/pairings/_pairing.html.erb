@@ -3,9 +3,7 @@
 <ul>
   <li>Mentor: <%= pairing.mentor.name %></li>
 
-  <li>Student: <% if pairing.student != nil %>
-                <%= pairing.student.name %></li>
-               <% end %>
+  <li>Student: <%= display_student(pairing.student) %></li>
 
   <li>Avg. Rating: <%= display_rating(pairing.mentor) %> </li>
   <li>Phase: <%= pairing.mentor.phase %></li>
