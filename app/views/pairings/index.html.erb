@@ -2,6 +2,20 @@
 <div class='list'>
   <h1>Available Pairing Sessions</h1>
 
+ <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Hi Pete!</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Pete has a beard</h4>
+      <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAIwAAAAJGU5YWU1ZmE4LTRiYTUtNDJkNS05MzMyLWM2YWU0ODUzMWRiMw.jpg" alt="Pete" height="750" width="750">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Bye Pete</a>
+    </div>
+  </div>
+
     <%= render @available_pairings %>
   <% if current_user.phase == 2 || current_user.phase == 3 %>
     <%= link_to 'My Mentor Pairings', user_mentor_path(current_user), class: 'btn'  %><br><br>
