@@ -24,6 +24,10 @@
       <li><%= link_to "Login", new_user_path %></li>
       <li><%= link_to "Register", new_user_path %></li>
     <% end %>
+    <% if logged_in? %>
+        <p class='user-name'> <%= link_to "Hi #{current_user.name.capitalize}!", pairings_path %>
+        </p>
+    <% end %>
   </ul>
 
 <%= yield %>
