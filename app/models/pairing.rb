@@ -46,4 +46,8 @@ class Pairing < ActiveRecord::Base
     self.where("start_time >= '#{(Time.now).utc.iso8601}'").where(student_id: user.id)
   end
 
+  def self.search(search)
+    where('start_time < ?', "#{search}".to_i.days.ago)
+  end
+
 end
