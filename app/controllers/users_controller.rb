@@ -7,12 +7,14 @@ class UsersController < ApplicationController
   def student
     @upcoming_student_pairings = Pairing.upcoming_student_pairings(current_user)
     @previous_student_pairings = Pairing.previous_student_pairings(current_user)
+    @feedbacks = @user.received_student_feedbacks.limit(5)
   end
 
   def mentor
     @upcoming_mentor_pairings = Pairing.upcoming_mentor_pairings(current_user)
     @previous_mentor_pairings = Pairing.previous_mentor_pairings(current_user)
     @topics = Topic.all.limit(10)
+    @feedbacks = @user.received_mentor_feedbacks.limit(5)
   end
 
   def new
