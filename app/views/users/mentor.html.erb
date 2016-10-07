@@ -11,3 +11,11 @@
   <%= render @topics %>
   <%= submit_tag 'Save', class: 'btn', name: nil %>
 <% end %>
+
+<div class='list'>
+  <h2>Recent Received Feedback:</h2>
+  <ul>
+    <%= render @feedbacks %>
+  </ul>
+  <%= link_to 'Your Feedback', user_feedbacks_path, class: 'btn' %>
+</div>
