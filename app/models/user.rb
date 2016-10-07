@@ -43,4 +43,8 @@ class User < ActiveRecord::Base
     feedback_arr =self.mentor_feedbacks.where("user_id != #{self.id}")
     return feedback_arr.map { |feedback| feedback.rating }
   end
+
+  def show_topics
+    self.topics.map { |topic| topic.topic }.join(', ')
+  end
 end
