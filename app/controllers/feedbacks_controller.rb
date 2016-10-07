@@ -5,7 +5,7 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    feedback = @user.feedbacks.new(feedback_params)
+    feedback = @user.feedbacks.new(feedback_params.merge(rating: params[:rating]).merge(pairing_id: params[:pairing_id]))
 
     if feedback.save
       redirect_to @user

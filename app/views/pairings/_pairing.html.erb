@@ -13,6 +13,9 @@
   <li><%= pairing.mentor.email %></li>  <!-- link to email -->
 
   <% if pairing.mentor_id != current_user.id %>
-    <%= link_to 'Join this mentor', edit_pairing_path(pairing), class: 'btn-flat join'  %>
+    <%= link_to 'Join this mentor', edit_pairing_path(pairing), class: 'btn-flat minor-button'  %>
+  <% end %>
+  <% if pairing.start_time < (Time.now).utc.iso8601 %>
+    <%= link_to 'Give Feedback', new_pairing_feedback_path(pairing), class: 'btn-flat minor-button' %>
   <% end %>
 </ul>
