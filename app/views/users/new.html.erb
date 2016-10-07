@@ -1,45 +1,47 @@
-<%= render 'users/errors' %>
+<div class='list'>
+  <%= render 'users/errors' %>
 
-<h2>Register:</h2>
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :name %>
-      <%= f.text_field :name %><br>
+  <h2>Login:</h2>
+  <%= form_for @user, url: sessions_path do |f| %>
 
     <%= f.label :email %>
       <%= f.email_field :email %><br>
-
     <%= f.label :password %>
       <%= f.password_field :password %><br>
 
-        <input name='phase' value='1' id='radio' type='radio'>
-        <label for='radio'>1</label>
+    <%= f.submit "Login", name: nil %>
+  <% end %><br><br>
 
-        <input name='phase' value='2' id='radio2' type='radio'>
-        <label for='radio2'>2</label>
+  <h2>Register:</h2>
+  <%= form_for @user do |f| %>
+    <p>
+      <%= f.label :name %>
+        <%= f.text_field :name %><br>
 
-        <input name='phase' value='3' id='radio3' type='radio'>
-        <label for='radio3'>3</label>
+      <%= f.label :email %>
+        <%= f.email_field :email %><br>
+
+      <%= f.label :password %>
+        <%= f.password_field :password %><br>
+
+          <input name='phase' value='1' id='radio' type='radio'>
+          <label for='radio'>1</label>
+
+          <input name='phase' value='2' id='radio2' type='radio'>
+          <label for='radio2'>2</label>
+
+          <input name='phase' value='3' id='radio3' type='radio'>
+          <label for='radio3'>3</label>
 
 
-      <%#= f.label(:phase, "Phase 1") %>
-    <%#= f.radio_button(:phase, "1") %><!-- <br> -->
-      <%#= f.label(:phase, "Phase 2") %>
-    <!-- <%#= f.radio_button(:phase, "2") %><br> -->
-      <%#= f.label(:phase, "Phase 3") %>
-    <!-- <%#= f.radio_button(:phase, "3") %><br> -->
+        <%#= f.label(:phase, "Phase 1") %>
+      <%#= f.radio_button(:phase, "1") %><!-- <br> -->
+        <%#= f.label(:phase, "Phase 2") %>
+      <!-- <%#= f.radio_button(:phase, "2") %><br> -->
+        <%#= f.label(:phase, "Phase 3") %>
+      <!-- <%#= f.radio_button(:phase, "3") %><br> -->
 
-    <%= f.submit "Create", name: nil %>
+      <%= f.submit "Create", name: nil %>
 
-<% end %>
-
-<h2>Login:</h2>
-<%= form_for @user, url: sessions_path do |f| %>
-
-  <%= f.label :email %>
-    <%= f.email_field :email %><br>
-  <%= f.label :password %>
-    <%= f.password_field :password %><br>
-
-  <%= f.submit "Login", name: nil %>
-<% end %>
+  <% end %>
+</div>

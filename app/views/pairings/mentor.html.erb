@@ -1,5 +1,8 @@
 <h1><%= current_user.name %>'s Upcoming Mentor Pairings</h1>
   <%= render @upcoming_mentor_pairings %>
 
+<h1>hi</h1>
+<%= link_to 'Create New Pairing Session', new_pairing_path, class: 'btn'  %>
+
 <h1><%= current_user.name %>'s Previous Mentor Pairings</h1>
   <%= render @previous_mentor_pairings %>

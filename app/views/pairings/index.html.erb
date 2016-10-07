@@ -1,9 +1,9 @@
 <!-- filtered list of upcoming pairings -->
 <div class='list'>
   <h1>Available Pairing Sessions</h1>
-    <%= link_to 'Create New Pairing Session', new_pairing_path, class: 'btn'  %>
+
     <%= render @available_pairings %>
 
-  <%= link_to 'Mentor Pairings', user_mentor_path(current_user), class: 'btn'  %><br><br>
-  <%= link_to 'Student Pairings', user_student_path(current_user), class: 'btn' %>
+  <%= link_to 'My Mentor Pairings', user_mentor_path(current_user), class: 'btn'  %><br><br>
+  <%= link_to 'My Student Pairings', user_student_path(current_user), class: 'btn' %>
 </div>
