@@ -3,10 +3,10 @@ class TopicsController < ApplicationController
 
   def create
     Topic.all.each do |topic|
-      if params.keys.include? (topic.topic)
+      if (params.keys.include? (topic.topic)) && (!@user.topics.include? (topic))
         @user.topics << topic
       elsif @user.topics.include? (topic)
-        @user.topics.find(topic.id).destroy
+        @user.topics_users.find_by(topic_id: topic.id).destroy
       end
     end
     redirect_to user_mentor_path
