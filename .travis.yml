@@ -3,6 +3,5 @@ rvm:
  - 2.2
  - ruby
 script:
-- bundle exec db:create
-- bundle exec db:migrate
+- rake db:test:prepare
 - bundle exec rake spec
