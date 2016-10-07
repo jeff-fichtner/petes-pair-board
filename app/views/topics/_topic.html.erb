@@ -1,2 +1,2 @@
-<input type="checkbox" class="filled-in" id="filled-in-box-<%= topic.id %>" />
+<input type="checkbox" class="filled-in" id="filled-in-box-<%= topic.id %>" name="<%= topic.topic %>"<% if checked_topic?(topic) %><%= checked="checked" %><% end %> />
 <label for="filled-in-box-<%= topic.id %>"><%= topic.topic %></label><br>
