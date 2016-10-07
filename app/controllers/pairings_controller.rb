@@ -1,11 +1,7 @@
 class PairingsController < ApplicationController
   before_action :set_user
   def index
-    if params[:search]
-      @available_pairings = Pairing.search(params[:search])
-    else
-      @available_pairings =  Pairing.available_pairings(current_user)
-    end
+    @available_pairings =  Pairing.available_pairings(current_user).order(start_time: :desc)
   end
 
   def new

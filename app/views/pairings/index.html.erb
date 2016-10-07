@@ -2,13 +2,6 @@
 <div class='list'>
   <h1>Available Pairing Sessions</h1>
 
-    <%= form_tag pairings_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
-    </p><br><br>
-  <% end %>
-
     <%= render @available_pairings %>
   <% if current_user.phase == 2 || current_user.phase == 3 %>
     <%= link_to 'My Mentor Pairings', user_mentor_path(current_user), class: 'btn'  %><br><br>
