@@ -2,4 +2,7 @@ language: ruby
 rvm:
  - 2.2
  - ruby
-script: bundle exec rake spec
+script:
+- bundle exec db:create
+- bundle exec db:migrate
+- bundle exec rake spec
