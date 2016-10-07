@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def mentor
     @upcoming_mentor_pairings = Pairing.upcoming_mentor_pairings(current_user)
     @previous_mentor_pairings = Pairing.previous_mentor_pairings(current_user)
+    @topics = Topic.all.limit(10)
   end
 
   def new

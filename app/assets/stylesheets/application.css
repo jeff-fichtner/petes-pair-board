@@ -38,9 +38,10 @@ ul.navbar {
 }
 
 .list {
+    display: inline-block;
     padding: 10px;
     margin-left: 50px;
-    width: 80%
+    width: 75%;
 }
 
 .minor-button {
@@ -49,4 +50,9 @@ ul.navbar {
 
 li {
     font-weight: bold;
+}
+.topics-form {
+    padding-top: 4em;
+    padding-right: 6em;
+    float: right;
 }
