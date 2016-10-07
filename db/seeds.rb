@@ -27,3 +27,5 @@ Topic.create!(topic: 'enumerables')
 Topic.create!(topic: 'MVC')
 Topic.create!(topic: 'associations')
 Topic.create!(topic: 'schemas')
+
+30.times {TopicsUser.create!(topic_id: rand(1..10), mentor_id: rand(1..10))}
