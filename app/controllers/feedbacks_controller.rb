@@ -1,7 +1,10 @@
 class FeedbacksController < ApplicationController
   before_action :set_user
   def index
-    # sorting feedback
+    @received_student_feedbacks = @user.received_student_feedbacks
+    @received_mentor_feedbacks = @user.received_mentor_feedbacks
+    @given_student_feedbacks = @user.given_student_feedbacks
+    @given_mentor_feedbacks = @user.given_mentor_feedbacks
   end
 
   def create
