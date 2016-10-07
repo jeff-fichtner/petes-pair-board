@@ -51,4 +51,8 @@ class User < ActiveRecord::Base
   def unrated?
     self.mentor_ratings.empty?
   end
+
+  def only_student?
+    self.phase == 1
+  end
 end

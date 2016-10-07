@@ -5,3 +5,11 @@
   <h1><%= current_user.name.capitalize %>'s Previous Student Pairings</h1>
     <%= render @previous_student_pairings %>
 </div>
+
+<div class='list'>
+  <h2>Recent Received Feedback:</h2>
+  <ul>
+    <%= render @feedbacks %>
+  </ul>
+  <%= link_to 'Your Feedback', user_feedbacks_path, class: 'btn' %>
+</div>

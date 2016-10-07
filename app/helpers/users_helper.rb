@@ -6,4 +6,12 @@ module UsersHelper
       user.average
     end
   end
+
+  def display_student(user)
+    if !user
+      "this could be you"
+    else
+      user
+    end
+  end
 end

@@ -1,0 +1,35 @@
+<div class='list'>
+  <h2>Received Feedback</h2>
+  <% if !@received_student_feedbacks.empty? %>
+    <% if !current_user.only_student? %>
+      <h3>...as a student:</h3>
+    <% end %>
+    <ul>
+      <%= render @received_student_feedbacks %>
+    </ul>
+  <% end %>
+  <% if !@received_mentor_feedbacks.empty? %>
+    <h3>...as a mentor:</h3>
+    <ul>
+      <%= render @received_mentor_feedbacks %>
+    </ul>
+  <% end %>
+</div>
+
+<div class='list'>
+  <h2>Given Feedback</h2>
+  <% if !@given_student_feedbacks.empty? %>
+    <% if !current_user.only_student? %>
+      <h3>...as a student:</h3>
+    <% end %>
+    <ul>
+      <%= render @given_student_feedbacks %>
+    </ul>
+  <% end %>
+  <% if !@given_mentor_feedbacks.empty? %>
+    <h3>...as a mentor:</h3>
+    <ul>
+      <%= render @given_mentor_feedbacks %>
+    </ul>
+  <% end %>
+</div>
