@@ -1,9 +1,17 @@
 <!-- filtered list of upcoming pairings -->
 <div class='list'>
   <h1>Available Pairing Sessions</h1>
-    <%= link_to 'Create New Pairing Session', new_pairing_path, class: 'btn'  %>
-    <%= render @available_pairings %>
 
-  <%= link_to 'Mentor Pairings', user_mentor_path(current_user), class: 'btn'  %><br><br>
-  <%= link_to 'Student Pairings', user_student_path(current_user), class: 'btn' %>
+    <%= form_tag pairings_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p><br><br>
+  <% end %>
+
+    <%= render @available_pairings %>
+  <% if current_user.phase == 2 || current_user.phase == 3 %>
+    <%= link_to 'My Mentor Pairings', user_mentor_path(current_user), class: 'btn'  %><br><br>
+  <% end %>
+  <%= link_to 'My Student Pairings', user_student_path(current_user), class: 'btn' %>
 </div>
