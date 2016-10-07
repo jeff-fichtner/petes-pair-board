@@ -11,7 +11,7 @@ module UsersHelper
     if !user
       "this could be you"
     else
-      user
+      user.name
     end
   end
 end
