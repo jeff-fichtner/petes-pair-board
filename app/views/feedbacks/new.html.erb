@@ -3,16 +3,33 @@
         <%= f.label :comment, 'Leave ASK Feedback' %>
         <%= f.text_field :comment %><br>
 
-        <%= f.label(:rating, "1") %>
-        <%= f.radio_button(:rating, "1") %><br>
-        <%= f.label(:rating, "2") %>
-        <%= f.radio_button(:rating, "2") %><br>
-        <%= f.label(:rating, "3") %>
-        <%= f.radio_button(:rating, "3") %><br>
-        <%= f.label(:rating, "4") %>
-        <%= f.radio_button(:rating, "4") %><br>
-        <%= f.label(:rating, "5") %>
-        <%= f.radio_button(:rating, "5") %><br>
+        <input name='rating' value='1' id='radio' type='radio'>
+        <label for='radio'>1</label>
+
+        <input name='rating' value='2' id='radio2' type='radio'>
+        <label for='radio2'>2</label>
+
+        <input name='rating' value='3' id='radio3' type='radio'>
+        <label for='radio3'>3</label>
+
+        <input name='rating' value='4' id='radio4' type='radio'>
+        <label for='radio4'>4</label>
+
+        <input name='rating' value='5' id='radio5' type='radio'>
+        <label for='radio5'>5</label>
+
+        <input type='hidden' name='pairing_id' value="#{params[:id]">
+
+        <%#= f.radio_button(:rating, "1", class: 'with-gap') %>
+        <%#= f.label(:rating, "1", class: 'with-gap') %>
+        <%#= f.radio_button(:rating, "2") %>
+        <%#= f.label(:rating, "2") %>
+        <%#= f.radio_button(:rating, "3") %>
+        <%#= f.label(:rating, "3") %>
+        <%#= f.radio_button(:rating, "4") %>
+        <%#= f.label(:rating, "4") %>
+        <%#= f.radio_button(:rating, "5") %>
+        <%#= f.label(:rating, "5") %>
         <%= f.submit %>
     <% end %>
 </div>
