@@ -10,10 +10,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <ul class="navbar">
     <li><%= link_to "Home", root_path %></li>
     <% if logged_in? %>
-      <li><%= link_to "Logout", logout_path, method: :delete %></li>
       <li> <%= link_to "Available Pairings", pairings_path %> </li>
       <li> <%= link_to "My Student Pairings", user_student_path(current_user) %> </li>
       <% if current_user.phase == 2 || current_user.phase == 3 %>
@@ -23,6 +24,11 @@
     <% else %>
       <li><%= link_to "Login", new_user_path %></li>
       <li><%= link_to "Register", new_user_path %></li>
+    <% end %>
+    <% if logged_in? %>
+        <p class='user-name'> <%= link_to "Hi #{current_user.name.capitalize}!", pairings_path %>' '
+          <%= link_to "Logout", logout_path, method: :delete %>
+        </p>
     <% end %>
   </ul>
 
