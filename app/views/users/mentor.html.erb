@@ -6,3 +6,8 @@
   <h1><%= current_user.name.capitalize %>'s Previous Mentor Pairings</h1>
     <%= render @previous_mentor_pairings %>
 </div>
+
+<%= form_tag user_topics_path, class: 'topics-form' do %>
+  <%= render @topics %>
+  <%= submit_tag 'Save', class: 'btn', name: nil %>
+<% end %>

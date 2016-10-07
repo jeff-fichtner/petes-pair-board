@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, except: :index do
     get 'student'
     get 'mentor'
-    resources :topics, only: [:new, :create]
+    resources :topics, only: [:create]
     resources :feedbacks, only: [:index]
   end
 
