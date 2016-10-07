@@ -47,4 +47,8 @@ class User < ActiveRecord::Base
   def show_topics
     self.topics.map { |topic| topic.topic }.join(', ')
   end
+
+  def unrated?
+    self.mentor_ratings.empty?
+  end
 end
