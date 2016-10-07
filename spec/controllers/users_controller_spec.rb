@@ -7,7 +7,7 @@ describe UsersController do
       expect(response).to have_http_status 302
     end
 
-    it "redirects to the pairings homepage" do
+    xit "redirects to the pairings homepage" do
       get :show
       expect(response).to redirect_to pairings_path
     end
