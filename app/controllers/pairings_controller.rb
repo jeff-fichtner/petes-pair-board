@@ -31,7 +31,10 @@ class PairingsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @pairing = Pairing.find(params[:id])
+    @pairing.destroy
+    redirect_to(:back)
   end
 
   private

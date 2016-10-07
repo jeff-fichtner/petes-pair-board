@@ -15,8 +15,11 @@
     <% if logged_in? %>
       <li><%= link_to "Logout", logout_path, method: :delete %></li>
       <li> <%= link_to "Available Pairings", pairings_path %> </li>
-      <li> <%= link_to "Student Pairings", user_student_path(current_user) %> </li>
-      <li> <%= link_to "Mentor Pairings", user_mentor_path(current_user) %> </li>
+      <li> <%= link_to "My Student Pairings", user_student_path(current_user) %> </li>
+      <% if current_user.phase == 2 || current_user.phase == 3 %>
+        <li> <%= link_to "My Mentor Pairings", user_mentor_path(current_user) %> </li>
+        <li> <%= link_to 'Schedule A Pairing', new_pairing_path %> </li>
+      <% end %>
     <% else %>
       <li><%= link_to "Login", new_user_path %></li>
       <li><%= link_to "Register", new_user_path %></li>

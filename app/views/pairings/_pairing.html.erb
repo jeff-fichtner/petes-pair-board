@@ -15,7 +15,10 @@
   <% if pairing.mentor_id != current_user.id %>
     <%= link_to 'Join this mentor', edit_pairing_path(pairing), class: 'btn-flat minor-button'  %>
   <% end %>
-  <% if pairing.start_time < (Time.now).utc.iso8601 %>
-    <%= link_to 'Give Feedback', new_pairing_feedback_path(pairing), class: 'btn-flat minor-button' %>
+  <% if pairing.start_time < (Time.now).utc.iso8601 && pairing.feedbacks.first.try(:user_id) != current_user.id && pairing.feedbacks.second.try(:user_id) != current_user.id%>
+      <%= link_to 'Give Feedback', new_pairing_feedback_path(pairing), class: 'btn-flat minor-button' %><br>
+  <% end %>
+  <% if pairing.mentor_id == current_user.id && pairing.start_time > (Time.now).utc.iso8601%>
+    <%= link_to 'Delete This Pairing', pairing, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn-flat minor-button' %>
   <% end %>
 </ul>
