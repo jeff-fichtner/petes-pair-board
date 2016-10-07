@@ -1,7 +1,11 @@
 class PairingsController < ApplicationController
   before_action :set_user
   def index
-    @available_pairings =  Pairing.available_pairings(current_user)
+    if params[:search]
+      @available_pairings = Pairing.search(params[:search])
+    else
+      @available_pairings =  Pairing.available_pairings(current_user)
+    end
   end
 
   def new
@@ -31,7 +35,10 @@ class PairingsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @pairing = Pairing.find(params[:id])
+    @pairing.destroy
+    redirect_to(:back)
   end
 
   private
