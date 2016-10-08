@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password], phase: params[:phase])
     if @user.save
+      UserMailer.welcome_email(@user).deliver_now
       session[:user_id] = @user.id
       redirect_to @user
     else

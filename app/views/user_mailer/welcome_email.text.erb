@@ -1,0 +1,6 @@
+Welcome to Pete's Pair Board, <%= @user.name %>!
+------------------------------------------------
+
+You have successfully signed up to be a <% if !@user.only_student? %><%= "mentor and a " %><% end %>student. We think that's just swell.
+
+To log in, just follow this link: <%= @url %>.
