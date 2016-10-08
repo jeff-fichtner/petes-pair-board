@@ -9,7 +9,7 @@ threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
 # best practice: set min equal to max threads_count
 
-# preload_app!
+preload_app!
 # reduces startup time of individual puma worker processes
 
 rackup      DefaultRackup
