@@ -2,7 +2,7 @@
 
 # create Procfile/run this config file - declares what commands are run by your app's dynos
 
-workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+workers Integer(ENV['WEB_CONCURRENCY'] || 4)
 # how many workers per dyno (RAM)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 1)
 # how many threads per worker (CPU)
