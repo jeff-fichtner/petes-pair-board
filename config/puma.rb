@@ -4,7 +4,7 @@
 
 workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 # how many workers per dyno (RAM)
-threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
+threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 1)
 # how many threads per worker (CPU)
 threads threads_count, threads_count
 # best practice: set min equal to max threads_count
